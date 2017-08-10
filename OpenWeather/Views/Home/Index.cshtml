@@ -3,29 +3,47 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Maby today was rain?</h1>    
+    <p class="lead">Current weather and forecasts in your city</p>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.ValidationSummary()
+            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+            <p>
+                <label>City</label> 
+                @Html.TextBox("City")
+            </p>
+            <p><button type="submit">Find</button></p>
+        </div>
+    }
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div id="weather-widget" class="weather-widget">
+        <h2 class="weather-widget__city-name">
+            <!-- react-text: 98 -->Weather in <!-- /react-text --><!-- react-text: 99 -->Kyiv<!-- /react-text --><!-- react-text: 100 -->, <!-- /react-text --><!-- react-text: 101 -->UA<!-- /react-text -->
+        </h2><h3 class="weather-widget__temperature">
+            <img src="http://openweathermap.org/img/w/01d.png" alt="Weather Zhytomyr , UA" width="50" height="50"><!-- react-text: 104 -->30<!-- /react-text --><!-- react-text: 105 --> <!-- /react-text --><!-- react-text: 106 -->°C<!-- /react-text -->
+        </h3><p class="weather-widget__main">clear sky</p><p>
+            <!-- react-text: 109 -->18:00 Aug 10<!-- /react-text -->
+        </p><table class="weather-widget__items">
+            <tbody>
+                <tr class="weather-widget__item">
+                    <td>Wind</td>
+                    <td id="weather-widget-wind">
+                        <!-- react-text: 116 -->Gentle Breeze,
+                        3.5<!-- /react-text --><!-- react-text: 117 --> <!-- /react-text --><!-- react-text: 118 -->m/s<!-- /react-text --><!-- react-text: 119 -->, South ( 174.502 )<!-- /react-text -->
+                    </td>
+                </tr>
+                <tr class="weather-widget__item"><td>Cloudiness</td><td id="weather-widget-cloudiness">Sky is clear</td></tr>
+                <tr class="weather-widget__item"><td>Pressure</td><td>1008.87 hpa</td></tr>
+                <tr class="weather-widget__item"><td>Humidity</td><td>50 %</td></tr>
+                <tr class="weather-widget__item"><td>Sunrise</td><td>05:47 </td></tr>
+                <tr class="weather-widget__item"><td>Sunset</td><td>20:32 </td></tr>
+                <tr class="weather-widget__item"><td>Geo coords</td><td><a href="/weathermap?zoom=8&amp;lat=50.26&amp;lon=28.68" class="weather-widget__link"><!-- react-text: 139 -->[<!-- /react-text --><span id="wrong-data-lat">50.26</span><!-- react-text: 141 -->,<!-- /react-text --><span id="wrong-data-lon">28.68</span><!-- react-text: 143 -->]<!-- /react-text --></a></td></tr>
+            </tbody>
+        </table>
     </div>
 </div>
