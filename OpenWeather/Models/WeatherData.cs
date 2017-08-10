@@ -8,7 +8,7 @@ namespace OpenWeather.Models
 {
     public class WeatherData
     {
-        public coord coord;
+        public Coord coord;
 
         public weather[] weather;
 

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using System.IO;
+using OpenWeather.Models;
 
 namespace OpenWeather.Controllers
 {
@@ -16,7 +18,13 @@ namespace OpenWeather.Controllers
 
             return View();
         }
+        public ActionResult Parse(string carts)
+        {
+            ConvertToDatabase parser = new ConvertToDatabase();
+            parser.LetsParse();
 
+            return View();
+        }
 
     }
 }

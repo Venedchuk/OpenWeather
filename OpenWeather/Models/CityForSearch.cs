@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,12 +8,13 @@ namespace OpenWeather.Models
 {
     public class CityForSearch
     {
-        public int id;
+        //[Key]
+        public int id{ get; set; }
 
-        public string name;
+        public string name { get; set; }
 
-        public string country;
+        public string country { get; set; }
 
-        public coord coordinate;
+        public Coord coord { get; set; }
     }
 }

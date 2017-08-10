@@ -9,11 +9,11 @@ namespace OpenWeather.Models.ForDb
       public class ConnectToDb : DbContext 
     {
         
-        public ConnectToDb()  :base("Cities")
+        public ConnectToDb()  :base("CitiesDb")
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ConnectToDb>());
         }
         public DbSet<CityForSearch> Cities { get; set; }
-        coord
+        public DbSet<Coord> Coord { get; set; }
     }
 }

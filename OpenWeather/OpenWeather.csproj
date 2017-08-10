@@ -134,8 +134,8 @@
     </Compile>
     <Compile Include="Models\CityForSearch.cs" />
     <Compile Include="Models\clouds.cs" />
-    <Compile Include="Models\ConvertToDatabase.cs" />
-    <Compile Include="Models\coord.cs" />
+    <Compile Include="Models\ForDb\ConvertToDatabase.cs" />
+    <Compile Include="Models\Coord.cs" />
     <Compile Include="Models\ForDb\Connect_to_Db.cs" />
     <Compile Include="Models\main.cs" />
     <Compile Include="Models\sys.cs" />

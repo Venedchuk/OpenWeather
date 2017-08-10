@@ -5,11 +5,12 @@ using System.Web;
 
 namespace OpenWeather.Models
 {
-    public class coord
+    public class Coord
     {
+        public int id { get; set; }
 
-        public double lon;
+        public double lon { get; set; }
 
-        public double lat;
+        public double lat { get; set; }
     }
 }
