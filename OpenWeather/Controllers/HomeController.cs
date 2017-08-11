@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using Newtonsoft.Json;
-using System.IO;
+﻿using System.Web.Mvc;
 using OpenWeather.Models;
 
 namespace OpenWeather.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string carts)
+        WorkWithDatabase parser = new WorkWithDatabase();
+        public ActionResult Index(string City)
         {
+            if (City == "")
+                City = "Kyiv";
 
+            parser.FindCityId(City);
 
             return View();
         }
-        public ActionResult Parse(string carts)
+        public ActionResult Parse()
         {
-            ConvertToDatabase parser = new ConvertToDatabase();
+           
             parser.LetsParse();
 
             return View();

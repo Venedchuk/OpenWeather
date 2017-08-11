@@ -8,7 +8,7 @@ using System.Web;
 
 namespace OpenWeather.Models
 {
-    public class ConvertToDatabase
+    public class WorkWithDatabase
     {
 
 
@@ -20,17 +20,30 @@ namespace OpenWeather.Models
             using (StreamReader file = File.OpenText(@"D:\Projects\OpenWeather\OpenWeather\Content\city.list.min.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                var cities = (CityForSearch [])serializer.Deserialize(file, typeof(CityForSearch []));
+                var cities = (CityForSearch[])serializer.Deserialize(file, typeof(CityForSearch[]));
                 using (ConnectToDb db = new ConnectToDb())
                 {
-                    foreach (var item in cities)
+                    var cityUa = cities.Where(x => x.country == "UA");
+                    foreach (var item in cityUa)
                     {
-                        db.Cities.Add(item);
+                        {
+                            db.Cities.Add(item);
+                            db.SaveChanges();
+                        }
                     }
                     db.SaveChanges();
 
                 }
             }
         }
+
+        internal void FindCityId(string city)
+        {
+            using (ConnectToDb db = new ConnectToDb())
+            {
+
+
+            }
+            }
     }
 }

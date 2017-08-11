@@ -134,7 +134,7 @@
     </Compile>
     <Compile Include="Models\CityForSearch.cs" />
     <Compile Include="Models\clouds.cs" />
-    <Compile Include="Models\ForDb\ConvertToDatabase.cs" />
+    <Compile Include="Models\ForDb\WorkWithDatabase.cs" />
     <Compile Include="Models\Coord.cs" />
     <Compile Include="Models\ForDb\Connect_to_Db.cs" />
     <Compile Include="Models\main.cs" />
@@ -178,6 +178,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Parse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
