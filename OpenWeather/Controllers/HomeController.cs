@@ -13,6 +13,8 @@ namespace OpenWeather.Controllers
 
        var WeatherData = parser.FindCityId(City);
 
+
+
             return View(WeatherData);
         }
         public ActionResult Parse()

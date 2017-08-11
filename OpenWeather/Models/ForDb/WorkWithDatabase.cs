@@ -57,7 +57,7 @@ namespace OpenWeather.Models
             return GetResponseFromWeather(result);
         }
 
-
+       
 
         private WeatherData GetResponseFromWeather(CityForSearch result)
         {
@@ -84,7 +84,20 @@ namespace OpenWeather.Models
             }
             response.Close();
 
-            return JsonConvert.DeserializeObject<WeatherData>(answer);
+            var WeathData = JsonConvert.DeserializeObject<WeatherData>(answer);
+
+            WeathData.sys.SunRise = UnixTimeStampToDateTime(WeathData.sys.sunrise);
+            WeathData.sys.SunSet = UnixTimeStampToDateTime(WeathData.sys.sunset);
+
+            return WeathData;
+        }
+
+        public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
+        {
+            // Unix timestamp is seconds past epoch
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dtDateTime;
         }
     }
 }

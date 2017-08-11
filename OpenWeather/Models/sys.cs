@@ -17,7 +17,12 @@ namespace OpenWeather.Models
 
         public double sunrise;
 
+        public DateTime SunRise;
+
         public double sunset;
+
+        public DateTime SunSet;
+
 
     }
 }
