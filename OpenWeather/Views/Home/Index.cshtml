@@ -1,9 +1,10 @@
-﻿@{
+﻿@model OpenWeather.Models.WeatherData
+@{
     ViewBag.Title = "Home Page";
-}
 
+}
 <div class="jumbotron">
-    <h1>Maby today was rain?</h1>    
+    <h1>Maby today was rain?</h1>
     <p class="lead">Current weather and forecasts in your city</p>
     @using (Html.BeginForm())
     {
@@ -12,7 +13,7 @@
             @Html.ValidationSummary()
             <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
             <p>
-                <label>City</label> 
+                <label>City</label>
                 @Html.TextBox("City")
             </p>
             <p><button type="submit">Find</button></p>
@@ -23,26 +24,26 @@
 <div class="row">
     <div id="weather-widget" class="weather-widget">
         <h2 class="weather-widget__city-name">
-            <!-- react-text: 98 -->Weather in <!-- /react-text --><!-- react-text: 99 -->Kyiv<!-- /react-text --><!-- react-text: 100 -->, <!-- /react-text --><!-- react-text: 101 -->UA<!-- /react-text -->
+            Weather in @Model.name,
+           @Model.sys.country
         </h2><h3 class="weather-widget__temperature">
-            <img src="http://openweathermap.org/img/w/01d.png" alt="Weather Zhytomyr , UA" width="50" height="50"><!-- react-text: 104 -->30<!-- /react-text --><!-- react-text: 105 --> <!-- /react-text --><!-- react-text: 106 -->°C<!-- /react-text -->
-        </h3><p class="weather-widget__main">clear sky</p><p>
-            <!-- react-text: 109 -->18:00 Aug 10<!-- /react-text -->
+            <img src="http://openweathermap.org/img/w/01d.png" alt="Weather @Model.name , Model.sys.country" width="50" height="50">@Model.main.temp°C
+        </h3><p>
+
         </p><table class="weather-widget__items">
             <tbody>
                 <tr class="weather-widget__item">
                     <td>Wind</td>
                     <td id="weather-widget-wind">
-                        <!-- react-text: 116 -->Gentle Breeze,
-                        3.5<!-- /react-text --><!-- react-text: 117 --> <!-- /react-text --><!-- react-text: 118 -->m/s<!-- /react-text --><!-- react-text: 119 -->, South ( 174.502 )<!-- /react-text -->
+                      @Model.wind.speed m/s
                     </td>
                 </tr>
-                <tr class="weather-widget__item"><td>Cloudiness</td><td id="weather-widget-cloudiness">Sky is clear</td></tr>
-                <tr class="weather-widget__item"><td>Pressure</td><td>1008.87 hpa</td></tr>
-                <tr class="weather-widget__item"><td>Humidity</td><td>50 %</td></tr>
-                <tr class="weather-widget__item"><td>Sunrise</td><td>05:47 </td></tr>
-                <tr class="weather-widget__item"><td>Sunset</td><td>20:32 </td></tr>
-                <tr class="weather-widget__item"><td>Geo coords</td><td><a href="/weathermap?zoom=8&amp;lat=50.26&amp;lon=28.68" class="weather-widget__link"><!-- react-text: 139 -->[<!-- /react-text --><span id="wrong-data-lat">50.26</span><!-- react-text: 141 -->,<!-- /react-text --><span id="wrong-data-lon">28.68</span><!-- react-text: 143 -->]<!-- /react-text --></a></td></tr>
+                <tr class="weather-widget__item"><td>Опис</td><td>@Model.weather[0].description</td></tr>
+                <tr class="weather-widget__item"><td>Тиск</td><td>@Math.Round(Model.main.pressure,2) Pa</td></tr>
+                <tr class="weather-widget__item"><td>Вологість</td><td>@Model.main.humidity %</td></tr>
+               <tr class="weather-widget__item"><td>Sunrise</td><td>@TimeSpan.FromSeconds(Model.sys.sunrise) </td></tr>
+                <tr class="weather-widget__item"><td>Sunset</td><td>@TimeSpan.FromSeconds(Model.sys.sunset) </td></tr>
+                <tr class="weather-widget__item"><td>Geo coords</td><td><a href="/weathermap?zoom=8&amp;lat=50.26&amp;lon=28.68" class="weather-widget__link">[<span id="wrong-data-lat">@Model.coord.lon</span><span id="wrong-data-lon"> - @Model.coord.lat</span>]</a></td></tr>
             </tbody>
         </table>
     </div>

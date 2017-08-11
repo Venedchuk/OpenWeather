@@ -8,10 +8,10 @@ namespace OpenWeather.Controllers
         WorkWithDatabase parser = new WorkWithDatabase();
         public ActionResult Index(string City)
         {
-            if (City == "")
-                City = "Kyiv";
+            if (City == ""||City==null)
+                City = "Zhytomyr";
 
-            var WeatherData = parser.FindCityId(City);
+       var WeatherData = parser.FindCityId(City);
 
             return View(WeatherData);
         }

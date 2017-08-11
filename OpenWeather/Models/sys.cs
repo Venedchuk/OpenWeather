@@ -15,9 +15,9 @@ namespace OpenWeather.Models
 
         public string country;
 
-        public double sunUp;
+        public double sunrise;
 
-        public double sunDown;
+        public double sunset;
 
     }
 }

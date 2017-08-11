@@ -21,20 +21,22 @@ namespace OpenWeather.Models
             }
         }
 
-        private double _preassure;
+        private double _pressure;
 
-        public double preassure
+        public double pressure
         {
 
             get
             {
-                return _preassure;
+                return _pressure;
             }
             set
             {
-                _preassure = value /1.33322; //pascali
+                _pressure = value /1.33322; //pascali
             }
         }
+
+        public double humidity;
 
         private double _tempmin;
 

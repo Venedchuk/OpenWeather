@@ -2,6 +2,7 @@
 using OpenWeather.Models.ForDb;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -36,15 +37,23 @@ namespace OpenWeather.Models
 
                 }
             }
-        }
+        } //create database with ua loc
+        public Transliter translate = new Transliter();
+        
 
         internal WeatherData FindCityId(string city)
         {
+            
             CityForSearch result;
+            city = translate.GetTranslit(city);
+
             using (ConnectToDb db = new ConnectToDb())
             {
-               result = db.Cities.Single(x => x.name == city);
+                result = db.Cities.SingleOrDefault(x => x.name == city);
+                if (result == null)
+                    return GetResponseFromWeather(db.Cities.SingleOrDefault(x => x.id == 696050));
             }
+
             return GetResponseFromWeather(result);
         }
 
@@ -52,8 +61,13 @@ namespace OpenWeather.Models
 
         private WeatherData GetResponseFromWeather(CityForSearch result)
         {
-            WebRequest request = WebRequest.Create("api.openweathermap.org/data/2.5/weather?id=" + result.id + "&appid="+appid);
 
+
+
+            string url = "http://api.openweathermap.org/data/2.5/weather?id=" + result.id + "&appid=" + appid;
+
+            WebRequest request = WebRequest.Create(url);
+            Debug.Print(request.ToString());
             request.Method = "POST";
 
             request.ContentType = "application/x-www-urlencoded";
@@ -70,7 +84,7 @@ namespace OpenWeather.Models
             }
             response.Close();
 
-           return JsonConvert.DeserializeObject<WeatherData>(answer);
+            return JsonConvert.DeserializeObject<WeatherData>(answer);
         }
     }
 }
