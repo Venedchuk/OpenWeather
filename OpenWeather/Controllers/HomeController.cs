@@ -11,9 +11,9 @@ namespace OpenWeather.Controllers
             if (City == "")
                 City = "Kyiv";
 
-            parser.FindCityId(City);
+            var WeatherData = parser.FindCityId(City);
 
-            return View();
+            return View(WeatherData);
         }
         public ActionResult Parse()
         {
