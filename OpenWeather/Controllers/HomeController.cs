@@ -20,11 +20,9 @@ namespace OpenWeather.Controllers
 
         public ActionResult GetWeatherData(string City)
         {
-
             var WeatherData = parser.FindCity(City);
             return PartialView(WeatherData);
         }
-
 
         public ActionResult Parse()
         {
