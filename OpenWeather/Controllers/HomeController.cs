@@ -11,21 +11,12 @@ namespace OpenWeather.Controllers
             if (City == ""||City==null)
                 City = "Zhytomyr";
 
-            //var WeatherData = parser.FindCityId(City);
-            var WeatherData = parser.FindCity(City);
+       var WeatherData = parser.FindCityId(City);
+
 
 
             return View(WeatherData);
         }
-
-        public ActionResult GetWeatherData(string City)
-        {
-
-            var WeatherData = parser.FindCity(City);
-            return PartialView(WeatherData);
-        }
-
-
         public ActionResult Parse()
         {
            
