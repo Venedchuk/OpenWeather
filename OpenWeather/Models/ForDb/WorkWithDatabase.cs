@@ -38,6 +38,37 @@ namespace OpenWeather.Models
                 }
             }
         } //create database with ua loc
+
+        internal WeatherData FindCity(string city)
+        {
+            string url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + appid;
+
+            WebRequest request = WebRequest.Create(url);
+            Debug.Print(request.ToString());
+            request.Method = "POST";
+
+            request.ContentType = "application/x-www-urlencoded";
+
+            WebResponse response = request.GetResponse();
+
+            string answer;
+            using (Stream s = response.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(s))
+                {
+                    answer = reader.ReadToEnd();
+                }
+            }
+            response.Close();
+
+            var WeathData = JsonConvert.DeserializeObject<WeatherData>(answer);
+
+            WeathData.sys.SunRise = UnixTimeStampToDateTime(WeathData.sys.sunrise);
+            WeathData.sys.SunSet = UnixTimeStampToDateTime(WeathData.sys.sunset);
+
+            return WeathData;
+        }
+
         public Transliter translate = new Transliter();
         
 
