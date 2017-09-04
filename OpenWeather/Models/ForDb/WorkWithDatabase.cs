@@ -14,6 +14,8 @@ namespace OpenWeather.Models
     {
 
         private string appid = "29865b431a4dd31cc1d4eb8df4d6859c";
+        public Transliter translate = Transliter.GetInstance();
+
         public void LetsParse()
         {
 
@@ -63,13 +65,16 @@ namespace OpenWeather.Models
 
             var WeathData = JsonConvert.DeserializeObject<WeatherData>(answer);
 
-            WeathData.sys.SunRise = UnixTimeStampToDateTime(WeathData.sys.sunrise);
-            WeathData.sys.SunSet = UnixTimeStampToDateTime(WeathData.sys.sunset);
+            translate = Transliter.GetInstance();
+            WeathData = translate.Interpretate(WeathData);
+
+
 
             return WeathData;
         }
 
-        public Transliter translate = new Transliter();
+
+        
         
 
         internal WeatherData FindCityId(string city)
@@ -117,18 +122,12 @@ namespace OpenWeather.Models
 
             var WeathData = JsonConvert.DeserializeObject<WeatherData>(answer);
 
-            WeathData.sys.SunRise = UnixTimeStampToDateTime(WeathData.sys.sunrise);
-            WeathData.sys.SunSet = UnixTimeStampToDateTime(WeathData.sys.sunset);
+            WeathData = translate.Interpretate(WeathData);
+            
 
             return WeathData;
         }
 
-        public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
-        {
-            // Unix timestamp is seconds past epoch
-            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
-            return dtDateTime;
-        }
+
     }
 }

@@ -14,7 +14,7 @@ namespace OpenWeather.Models
 
         public string description;
 
-        private string icon;
+        public string icon;
 
         public Bitmap Icon
         {

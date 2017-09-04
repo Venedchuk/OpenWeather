@@ -7,19 +7,19 @@ namespace OpenWeather.Models
 {
     public class main
     {
-        private double _temp;
+        //private double _temp;
 
-        public double temp
-        {
-            get
-            {
-                return _temp;
-            }
-            set
-            {
-                _temp = value - 273.15; //Celsium
-            }
-        }
+        public double temp;
+        //{
+        //    get
+        //    {
+        //        return _temp;
+        //    }
+        //    set
+        //    {
+        //        _temp = value - 273.15; //Celsium
+        //    }
+        //}
 
         private double _pressure;
 
