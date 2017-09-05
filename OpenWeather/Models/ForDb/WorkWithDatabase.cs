@@ -1,12 +1,10 @@
 ﻿using Newtonsoft.Json;
 using OpenWeather.Models.ForDb;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Web;
+
 
 namespace OpenWeather.Models
 {

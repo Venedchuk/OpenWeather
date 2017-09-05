@@ -7,6 +7,8 @@ using System.Web;
 
 namespace OpenWeather.Models.ForDb
 {
+    
+
     public class Transliter
     {
         private static Dictionary<string, string> words;//Singletone
@@ -114,34 +116,29 @@ namespace OpenWeather.Models.ForDb
             WeathData.sys.SunRise = UnixTimeStampToDateTime(WeathData.sys.sunrise);
             WeathData.sys.SunSet = UnixTimeStampToDateTime(WeathData.sys.sunset);
             WeathData.main.temp = WeathData.main.temp - 273.15;
-            WeathData.weather[0].icon = GetIcon(WeathData.weather[0].description);
+            WeathData.weather[0].icon = GetIcon(WeathData.weather[0].description).GetUrlIcon();
 
 
             return WeathData;
         }
 
-        private string GetIcon(string description)//strategy
+        private IWearingStrategy GetIcon(string description)//strategy
         {
             List<string> subStrings = new List<string> { "rain", "clouds", "clear", "rain" };
-            string url = "http://openweathermap.org/img/w/";
+
 
             switch (subStrings.FirstOrDefault(description.Contains))
             {
                 case "rain":
-                    url += "09";
-                    break;
+                    return new RainStrategy();
                 case "clouds":
-                    url += "04";
-                    break;
+                    return new CloudsStrategy();
                 case "clear":
-                    url += "01";
-                    break;
+                    return new SunshineStrategy();
                 default:
-                    url += "50";
-                    break;
+                    return new DefaultWearningStrategy();
             }
 
-            return url += "d.png";
         }
     }
 
