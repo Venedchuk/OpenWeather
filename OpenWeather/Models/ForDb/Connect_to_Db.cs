@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace OpenWeather.Models.ForDb
 {
@@ -14,6 +10,6 @@ namespace OpenWeather.Models.ForDb
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ConnectToDb>());
         }
         public DbSet<CityForSearch> Cities { get; set; }
-        public DbSet<Coord> Coord { get; set; }
+        public DbSet<coord> Coord { get; set; }
     }
 }

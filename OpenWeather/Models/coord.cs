@@ -5,7 +5,7 @@ using System.Web;
 
 namespace OpenWeather.Models
 {
-    public class Coord
+    public class coord
     {
         public int id { get; set; }
 

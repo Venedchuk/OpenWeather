@@ -21,17 +21,15 @@ namespace OpenWeather.Controllers
         public ActionResult GetWeatherData(string City)
         {
             var WeatherData = parser.FindCity(City);
+            //var WeatherData = parser.FindCityId(City);
 
             return PartialView(WeatherData);
         }
 
         public ActionResult Parse()
         {
-           
             parser.LetsParse();
-
             return View();
         }
-
     }
 }

@@ -7,7 +7,8 @@ using System.Web;
 
 namespace OpenWeather.Models.ForDb
 {
-    
+
+
 
     public class Transliter
     {
@@ -20,72 +21,74 @@ namespace OpenWeather.Models.ForDb
         {
             if (_transliter == null)
             {
-                words = new Dictionary<string, string>();
-                words.Add("а", "a");
-                words.Add("б", "b");
-                words.Add("в", "v");
-                words.Add("г", "g");
-                words.Add("ґ", "g");
-                words.Add("д", "d");
-                words.Add("е", "e");
-                words.Add("є", "е");
-                words.Add("ж", "zh");
-                words.Add("з", "z");
-                words.Add("и", "y");
-                words.Add("і", "i");
-                words.Add("ї", "i");
-                words.Add("й", "j");
-                words.Add("к", "k");
-                words.Add("л", "l");
-                words.Add("м", "m");
-                words.Add("н", "n");
-                words.Add("о", "o");
-                words.Add("п", "p");
-                words.Add("р", "r");
-                words.Add("с", "s");
-                words.Add("т", "t");
-                words.Add("у", "u");
-                words.Add("ф", "f");
-                words.Add("х", "h");
-                words.Add("ц", "c");
-                words.Add("ч", "ch");
-                words.Add("ш", "sh");
-                words.Add("щ", "sch");
-                words.Add("ь", "");
-                words.Add("ю", "yu");
-                words.Add("я", "ya");
-                words.Add("А", "A");
-                words.Add("Б", "B");
-                words.Add("В", "V");
-                words.Add("Г", "G");
-                words.Add("Ґ", "G");
-                words.Add("Д", "D");
-                words.Add("Е", "T");
-                words.Add("Є", "R");
-                words.Add("Ж", "Zh");
-                words.Add("З", "Z");
-                words.Add("І", "I");
-                words.Add("Ї", "I");
-                words.Add("Й", "J");
-                words.Add("К", "K");
-                words.Add("Л", "L");
-                words.Add("М", "M");
-                words.Add("Н", "N");
-                words.Add("О", "O");
-                words.Add("П", "P");
-                words.Add("Р", "R");
-                words.Add("С", "S");
-                words.Add("Т", "T");
-                words.Add("У", "U");
-                words.Add("Ф", "F");
-                words.Add("Х", "H");
-                words.Add("Ц", "C");
-                words.Add("Ч", "Ch");
-                words.Add("Ш", "Sh");
-                words.Add("Щ", "Sch");
-                words.Add("Ь", "J");
-                words.Add("Ю", "Yu");
-                words.Add("Я", "Ya");
+                words = new Dictionary<string, string>()
+                {
+               {"а", "a" },
+               {"б", "b"},
+               {"в", "v"},
+               {"г", "g"},
+               {"ґ", "g"},
+               {"д", "d"},
+               {"е", "e"},
+               {"є", "е"},
+               {"ж", "zh"},
+               {"з", "z"},
+               {"и", "y"},
+               {"і", "i"},
+               {"ї", "i"},
+               {"й", "j"},
+               {"к", "k"},
+               {"л", "l"},
+               {"м", "m"},
+               {"н", "n"},
+               {"о", "o"},
+               {"п", "p"},
+               {"р", "r"},
+               {"с", "s"},
+               {"т", "t"},
+               {"у", "u"},
+               {"ф", "f"},
+               {"х", "h"},
+               {"ц", "c"},
+               {"ч", "ch"},
+               {"ш", "sh"},
+               {"щ", "sch"},
+               {"ь", ""},
+               {"ю", "yu"},
+               {"я", "ya"},
+               {"А", "A"},
+               {"Б", "B"},
+               {"В", "V"},
+               {"Г", "G"},
+               {"Ґ", "G"},
+               {"Д", "D"},
+               {"Е", "T"},
+               {"Є", "R"},
+               {"Ж", "Zh"},
+               {"З", "Z"},
+               {"І", "I"},
+               {"Ї", "I"},
+               {"Й", "J"},
+               {"К", "K"},
+               {"Л", "L"},
+               {"М", "M"},
+               {"Н", "N"},
+               {"О", "O"},
+               {"П", "P"},
+               {"Р", "R"},
+               {"С", "S"},
+               {"Т", "T"},
+               {"У", "U"},
+               {"Ф", "F"},
+               {"Х", "H"},
+               {"Ц", "C"},
+               {"Ч", "Ch"},
+               {"Ш", "Sh"},
+               {"Щ", "Sch"},
+               {"Ь", "J"},
+               {"Ю", "Yu"},
+               {"Я", "Ya"}
+                };
                 _transliter = new Transliter();
             }
 

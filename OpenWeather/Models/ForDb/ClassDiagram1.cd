@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="OpenWeather.Models.CityForSearch" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAAAAAAAAgA=</HashCode>
+      <FileName>Models\CityForSearch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.clouds" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Models\clouds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.coord" Collapsed="true">
+    <Position X="5.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Coord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.WorkWithDatabase" Collapsed="true">
+    <Position X="9.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAIAAAAAAAAAAAgACAAAAAAAAAAQABAA=</HashCode>
+      <FileName>Models\ForDb\WorkWithDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.main" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIBBAAAAAAAQAIAAAAAAAAAAAAAAACCAAAAAAAAAAA=</HashCode>
+      <FileName>Models\main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.sys" Collapsed="true">
+    <Position X="5.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAQCAAAAAAAAAmA=</HashCode>
+      <FileName>Models\sys.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.weather" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAQAAAAEAAgQ=</HashCode>
+      <FileName>Models\weather.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.WeatherData">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAABAAAQAAABBEAAAAAAQAAABARgQ=</HashCode>
+      <FileName>Models\WeatherData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.wind" Collapsed="true">
+    <Position X="5.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\wind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.ForDb.ConnectToDb" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\ForDb\Connect_to_Db.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.ForDb.StrategyWeatherIcon">
+    <Position X="10.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Models\ForDb\Strategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenWeather.Models.ForDb.DefaultWearningStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\ForDb\Strategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenWeather.Models.ForDb.SunshineStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\ForDb\Strategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenWeather.Models.ForDb.RainStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\ForDb\Strategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenWeather.Models.ForDb.CloudsStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\ForDb\Strategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenWeather.Models.ForDb.Transliter" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAQAAAAABAAABAAABAEAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\ForDb\Transliter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="OpenWeather.Models.ForDb.IWearingStrategy" Collapsed="true">
+    <Position X="3.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\ForDb\Strategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

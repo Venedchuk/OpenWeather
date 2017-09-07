@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace OpenWeather.Models
 {
     public class WeatherData
     {
-        public Coord coord;
+        public coord coord;
 
         public weather[] weather;
 

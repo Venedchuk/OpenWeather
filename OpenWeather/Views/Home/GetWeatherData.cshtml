@@ -22,8 +22,9 @@
                 <tr class="weather-widget__item"><td>Вологість</td><td>@Model.main.humidity %</td></tr>
                 <tr class="weather-widget__item"><td>Sunrise</td><td>@Model.sys.SunRise.ToShortTimeString() </td></tr>
                 <tr class="weather-widget__item"><td>Sunset</td><td>@Model.sys.SunSet.ToShortTimeString() </td></tr>
-                <tr class="weather-widget__item"><td>Geo coords</td><td><a href="https://www.google.com.ua/maps/place/ @Model.coord.lat,@Model.coord.lon" class="weather-widget__link">[<span id="wrong-data-lat">@Model.coord.lon</span><span id="wrong-data-lon"> - @Model.coord.lat</span>]</a></td></tr>
+                <tr class="weather-widget__item"><td>Geo coords</td><td><a href="https://openweathermap.org/weathermap?zoom=9&lat=@Model.coord.lat&lon=@Model.coord.lon" class="weather-widget__link" target="_blank">[<span id="wrong-data-lat">@Model.coord.lat</span><span id="wrong-data-lon"> - @Model.coord.lon</span>]</a></td></tr>
             </tbody>
+
         </table>
     </div>
 </div>

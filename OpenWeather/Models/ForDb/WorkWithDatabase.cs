@@ -16,9 +16,6 @@ namespace OpenWeather.Models
 
         public void LetsParse()
         {
-
-            //CityForSearch movie1 = JsonConvert.DeserializeObject<CityForSearch>(File.ReadAllText(@"D:\Projects\OpenWeather\OpenWeather\Content\city.list.min.json"));
-
             using (StreamReader file = File.OpenText(@"D:\Projects\OpenWeather\OpenWeather\Content\city.list.min.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
@@ -41,6 +38,8 @@ namespace OpenWeather.Models
 
         internal WeatherData FindCity(string city)
         {
+            if (city == null)
+                city = "Zhytomyr";
             string url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + appid;
 
             WebRequest request = WebRequest.Create(url);
